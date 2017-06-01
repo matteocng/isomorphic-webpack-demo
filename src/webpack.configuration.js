@@ -21,7 +21,7 @@ export default {
           {
             loader: 'style-loader',
             query: {
-              sourceMap: 1
+              sourceMap: true
             }
           },
           {
