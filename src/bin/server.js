@@ -12,6 +12,7 @@ import webpackConfiguration from '../webpack.configuration';
 const compiler = webpack(webpackConfiguration);
 
 const app = express();
+const appPort = 8000;
 
 app.use(webpackDevMiddleware(compiler, {
   noInfo: false,
@@ -64,4 +65,7 @@ app.get('/', (req, res) => {
   res.send(renderFullPage(appString));
 });
 
-app.listen(8000);
+app.listen(appPort, () => {
+  // eslint-disable-next-line no-console, no-restricted-syntax
+  console.info(`Listening on port ${appPort}...`);
+});
